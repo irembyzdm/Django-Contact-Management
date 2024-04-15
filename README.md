@@ -1,1 +1,1 @@
-![Açıklama](django-contact.gif)
+![Açıklama](app-gif/django-contact.gif)
