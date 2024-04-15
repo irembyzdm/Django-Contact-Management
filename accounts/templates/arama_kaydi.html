@@ -1,0 +1,57 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Yeni Arama Kaydı Oluştur</h2>
+          <hr>
+          <form method="POST" action="{% url 'arama_kaydi' %}">
+            {% csrf_token %}
+            <div class="row mb-3">
+              <label for="ad" class="col-sm-3 col-form-label">Ad:</label>
+              <div class="col-sm-9">
+                {{ form.ad }}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="soyad" class="col-sm-3 col-form-label">Soyad:</label>
+              <div class="col-sm-9">
+                {{ form.soyad }}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="telefon" class="col-sm-3 col-form-label">Telefon:</label>
+              <div class="col-sm-9">
+                {{ form.telefon }}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="aciklama" class="col-sm-3 col-form-label">Açıklama:</label>
+              <div class="col-sm-9">
+                {{ form.aciklama }}
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="arama_nedeni" class="col-sm-3 col-form-label">Arama Nedeni:</label>
+              <div class="col-sm-9">
+                {{ form.arama_nedeni }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9 offset-sm-3">
+                <button type="submit" class="btn btn-primary">Aramayı Kaydet</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

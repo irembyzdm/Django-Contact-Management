@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-primary rounded-3 shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Ücretsiz Üyelik Oluştur</h2>
+          <form method="post" class="row g-3">
+            {% csrf_token %}
+            <div class="col-md-12">
+              <label for="username" class="form-label col-form-label-sm">Kullanıcı Adı:</label>
+              <input type="text" name="username" id="username" class="form-control form-control-sm rounded-3" required>
+            </div>
+            <div class="col-md-12">
+              <label for="email" class="form-label col-form-label-sm">E-posta Adresi:</label>
+              <input type="email" name="email" id="email" class="form-control form-control-sm rounded-3"> </div>
+            <div class="col-md-12">
+              <label for="password1" class="form-label col-form-label-sm">Şifre:</label>
+              <input type="password" name="password1" id="password1" class="form-control form-control-sm rounded-3" required>
+            </div>
+            <div class="col-md-12">
+              <label for="password2" class="form-label col-form-label-sm">Şifre Tekrar:</label>
+              <input type="password" name="password2" id="password2" class="form-control form-control-sm rounded-3" required>
+            </div>
+            <div class="col-md-12 text-center mt-3">
+              <button type="submit" class="btn btn-primary rounded-pill px-4">Kaydol</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

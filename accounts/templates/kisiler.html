@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                  <h2 class="card-title text-center mb-4">Kişiler</h2>
+                  <hr>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Ad-Soyad</th>
+                          <th>Telefon</th>
+                          <th>Detaylar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for kisi in kisiler %}
+                          <tr>
+                            <td>{{ kisi.ad }} {{ kisi.soyad }}</td>
+                            <td>{{ kisi.telefon }}</td>
+                            <td>
+                              <a href="{% url 'kisi_detay' kisi.id %}" class="btn btn-primary">Detaylar</a>
+                          </td>                          
+                          </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

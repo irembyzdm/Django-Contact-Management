@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Şirket Detayları </h2>
+                    <hr>
+                    <p><strong>İsim:</strong> {{ sirket.isim }}</p>
+                    <p><strong>Adres:</strong> {{ sirket.adres }}</p>
+                    <p><strong>E-mail:</strong> {{ sirket.email }}</p>
+                    <p><strong>Web Sitesi:</strong> <a href="{{ sirket.web }}">{{ sirket.web }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

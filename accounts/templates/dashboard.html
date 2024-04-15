@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-center mb-4">Kişileri Yönetin, Bağlantıyı Güçlendirin!</h2>
+                    <hr>
+                    <p class="card-text">
+                        Aradığınız kişileri bulmak, yeni kişiler eklemek ve şirketinizin iletişim bilgilerini güncellemek için menülerimizi kullanabilirsiniz.
+                    </p>
+                    <p class="card-text">
+                        Başlamak için lütfen menülerden birine tıklayın veya uygulama içinde arama yapın.
+                    </p>
+                </div>
+                <img src="{% static 'images/telefon.jpg' %}" class="card-img-bottom" alt="Illustration">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

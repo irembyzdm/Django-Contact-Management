@@ -1,0 +1,44 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img id="logo" src="{% static 'images/logo1.png' %}" alt="Logo">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+            <li class="nav-item {% if section == 'home' %}active{% endif %}">
+                <a class="nav-link" href="{% url 'home' %}">Anasayfa</a>
+            </li>
+            <li class="nav-item {% if section == 'kisiler' %}active{% endif %}">
+                <a class="nav-link" href="{% url 'kisiler' %}">Kişiler</a>
+            </li>
+            <li class="nav-item {% if section == 'kisi_ekle' %}active{% endif %}">
+                <a class="nav-link" href="{% url 'kisi_ekle' %}">Yeni Kişi Kayıt</a>
+            </li>
+            <li class="nav-item {% if section == 'gelen_aramalar' %}active{% endif %}">
+                <a class="nav-link" href="{% url 'gelen_aramalar' %}">Gelen Aramalar</a>
+            </li>
+            {% endif %}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-link">Çıkış Yap</button>
+              </form>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Giriş Yap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Kayıt Ol</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <h2 class="card-title text-center mb-4">Gelen Aramalar</h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end"> 
+                            <a href="{% url 'arama_kaydi' %}" class="btn btn-primary">Arama Kaydı Oluştur</a>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>İsim-Soyisim</th>
+                                <th>Telefon</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for arama in aramalar %}
+                            <tr>
+                                <td>{{ arama.ad }} {{ arama.soyad }}</td>
+                                <td>{{ arama.telefon }}</td>
+                                <td>
+                                    <a href="{% url 'arama_detay' arama.id %}" class="btn btn-secondary">
+                                        <i class="fas fa-info-circle"></i> Detaylar
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

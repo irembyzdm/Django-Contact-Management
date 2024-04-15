@@ -1,0 +1,57 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Kişi Detayları</h2>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <strong>Ad:</strong>
+                        </div>
+                        <div class="col-sm-9">
+                            {{ kisi.ad }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <strong>Soyad:</strong>
+                        </div>
+                        <div class="col-sm-9">
+                            {{ kisi.soyad }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <strong>Telefon:</strong>
+                        </div>
+                        <div class="col-sm-9">
+                            {{ kisi.telefon }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <strong>Email:</strong>
+                        </div>
+                        <div class="col-sm-9">
+                            {{ kisi.email }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <strong>Şirket:</strong>
+                        </div>
+                        <div class="col-sm-9">
+                            <a href="{% url 'sirket_detay' kisi.sirket.id %}">{{ kisi.sirket }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
